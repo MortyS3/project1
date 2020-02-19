@@ -10,7 +10,10 @@ def hello():
 @app.route('/first')
 def function():
     name = request.args.get("age", "country", "classroom")
-    return f'age, country, classroom' 
+    age = None
+    country = 'Ukraine'
+    classroom == 25
+    print ("age, country, classroom")
     pass
 
 
