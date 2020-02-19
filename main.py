@@ -12,8 +12,8 @@ def function():
     name = request.args.get("age", "country", "classroom")
     age = None
     country = 'Ukraine'
-    classroom == 25
-    print ("age, country, classroom")
+    classroom = 25
+    return f"{age}, {country}, {classroom}"
     pass
 
 
