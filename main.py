@@ -3,10 +3,11 @@ from flask import Flask, escape, request
 app = Flask(__name__)
 
 @app.route('/')
-@app.route('/first')
+
 def hello():
     name = request.args.get("name", "World")
     return f'Andrey Pedko, TZ-61'
+@app.route('/first')
 def function():
     name = request.args.get("age", "country", "classroom")
     return f'age, country, classroom' 
