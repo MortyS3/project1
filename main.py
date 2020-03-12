@@ -1,4 +1,4 @@
-#Telegram: @Mortys3
+# Telegram: @Mortys3
 
 from flask import Flask, escape, request, render_template
 
@@ -22,7 +22,6 @@ def function():
 
 @app.route('/second', methods=['GET', 'POST'])
 def second():
-
     if request.method == 'GET':
         return render_template('second.html')
 
@@ -34,22 +33,22 @@ def second():
 
         return f'Reversed text: {one}, Slice: {two},Comprehension: {three}'
 
-@app.route('/third',methods = ["GET", "POST"])
+
+@app.route('/third', methods=["GET", "POST"])
 def third():
     pass
 
 
 def function(in1, in2):
+    list1 = []
     for i in range(int(in1), int(in2)):
-        list1 = []
         if i % 3 == 0:
             list1.append(int(i))
+    return list1
 
 
 @app.route('/fourth/1', methods=["GET", "POST"])
-
 def fourth():
-
     if request.method == 'GET':
         return render_template('41.html')
 
@@ -58,8 +57,31 @@ def fourth():
         in2 = request.form.get('in2')
         list1 = function(in1, in2)
 
-
     return f'{" ".join(str(list1))}'
+
+
+def checker(x):
+    for i in x:
+
+        if ( i.isalpha() and i != ' ' ):
+            a = True
+        elif i != '  ':
+            a = False
+        else:
+            a = False
+    return f'{a}'
+
+
+@app.route('/fourth/2', methods=["GET", "POST"])
+def fourth2():
+    if request.method == 'GET':
+        return render_template('42.html')
+
+    if request.method == 'POST':
+        string1 = str(request.form.get('string1'))
+
+        otvet = checker(string1)
+    return f'{" ".join(otvet)}'
 
 
 if __name__ == '__main__':
